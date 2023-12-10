@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+}
