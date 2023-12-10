@@ -7,12 +7,7 @@ export default {
   darkMode: ['class', '[data-mode="dark"]'],
   plugins: [
     formsPlugin,
-    plugin(({ addBase, addUtilities }) => {
-      addBase({
-        body: {
-          '@apply text-gray-900 dark:text-gray-100': {}
-        }
-      });
+    plugin(({ addUtilities }) => {
       addUtilities({
         '.text-muted': {
           '@apply text-gray-700 dark:text-gray-300': {}

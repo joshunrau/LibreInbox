@@ -298,7 +298,7 @@ const team = [
   }
 ];
 
-export const Layout = () => {
+export const Example = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
