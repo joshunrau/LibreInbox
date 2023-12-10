@@ -39,7 +39,7 @@
         "minHeight": 650,
         "minWidth": 1000,
         "resizable": true,
-        "title": "email-client",
+        "title": "LibreInbox",
         "width": 1000
       }
     ]
