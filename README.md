@@ -5,11 +5,7 @@
   </a>
   <h3 align="center">LibreInbox</h3>
   <p align="center">
-    An open-source replacement for Outlook 
-    <br />
-    <a href="#">
-      <strong>Explore the docs »</strong>
-    </a>
+    An open-source replacement for Outlook
     <br />
     <br />
     <a href="#overview">View Docs</a>
@@ -23,11 +19,9 @@
 <!-- PROJECT SHIELDS -->
 <div align="center">
 
-![license](https://img.shields.io/github/license/DouglasNeuroInformatics/OpenDataCapture)
-![version](https://img.shields.io/github/package-json/v/DouglasNeuroInformatics/OpenDataCapture)
+![license](https://img.shields.io/github/license/joshunrau/LibreInbox)
+![version](https://img.shields.io/github/package-json/v/joshunrau/LibreInbox)
 
-<!-- ![build](https://github.com/DouglasNeuroInformatics/OpenDataCapture/actions/workflows/build.yaml/badge.svg) -->
-<!-- [![codecov](https://codecov.io/gh/DouglasNeuroInformatics/OpenDataCapture/branch/main/graph/badge.svg?token=XHC7BY6PJ1)](https://codecov.io/gh/DouglasNeuroInformatics/OpenDataCapture) -->
 
 </div>
 <hr />
