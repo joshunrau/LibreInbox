@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/joshunrau/LibreInbox">
-    <img src="public/logo.png" alt="LibreInbox Logo" width="100" >
+    <img src="public/icon.png" alt="LibreInbox Logo" width="100" >
   </a>
   <h3 align="center">LibreInbox</h3>
   <p align="center">
@@ -12,6 +12,8 @@
     </a>
     <br />
     <br />
+    <a href="#overview">View Docs</a>
+    ·
     <a href="https://github.com/joshunrau/LibreInbox/issues">Report Bug</a>
     ·
     <a href="https://github.com/joshunrau/LibreInbox/issues">Request Feature</a>
