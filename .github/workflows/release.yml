@@ -5,7 +5,36 @@ on:
       - 'v*'
   workflow_dispatch:
 jobs:
-  release:
+  create-release:
+    permissions:
+      contents: write
+    runs-on: ubuntu-20.04
+    outputs:
+      release_id: ${{ steps.create-release.outputs.result }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Get Package Metadata
+        run: |
+          echo "PACKAGE_NAME=$(cat package.json | jq -r '.name')" >> $GITHUB_ENV
+          echo "PACKAGE_VERSION=$(cat package.json | jq -r '.version')" >> $GITHUB_ENV
+      - name: Create Release
+        id: create-release
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data } = await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: `${process.env.PACKAGE_NAME}-v${process.env.PACKAGE_VERSION}`,
+              name: `LibreInbox v${process.env.PACKAGE_VERSION}`,
+              body: 'Take a look at the assets to download and install this app.',
+              draft: true,
+              prerelease: process.env.PACKAGE_VERSION.split('-').length > 1
+            })
+            return data.id
+  build-tauri:
+    needs: create-release
     permissions:
       contents: write
     strategy:
@@ -18,27 +47,41 @@ jobs:
         uses: actions/checkout@v4
       - name: Install System Dependencies (Ubuntu Only)
         if: matrix.platform == 'ubuntu-20.04'
-        run: sudo apt-get update && sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-      - name: Setup Rust Cache
-        uses: swatinem/rust-cache@v2
-        with:
-          workspaces: './src-tauri -> target'
+        run: sudo apt-get update && sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           cache: 'npm'
           node-version-file: '.nvmrc'
+      - name: Install Rust Stable
+        uses: dtolnay/rust-toolchain@stable
+      - name: Setup Rust Cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
       - name: Install Frontend Dependencies
         run: npm ci
-      - name: Build Binaries
-        uses: tauri-apps/tauri-action@v0
+      - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
-          releaseName: 'App v__VERSION__'
-          releaseBody: 'See the assets to download this version and install.'
-          releaseDraft: true
-          prerelease: false
+          releaseId: ${{ needs.create-release.outputs.release_id }}
+  publish-release:
+    permissions:
+      contents: write
+    runs-on: ubuntu-20.04
+    needs: [create-release, build-tauri]
+    steps:
+      - name: Publish Release
+        id: publish-release
+        uses: actions/github-script@v6
+        env:
+          release_id: ${{ needs.create-release.outputs.release_id }}
+        with:
+          script: |
+            github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: process.env.release_id,
+              draft: false,
+            })
