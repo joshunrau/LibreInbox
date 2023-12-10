@@ -1,6 +1,6 @@
 {
-  "name": "email-client",
-  "version": "0.0.0",
+  "name": "libre-inbox",
+  "version": "0.0.1-alpha",
   "private": true,
   "license": "GPL-3.0",
   "type": "module",
