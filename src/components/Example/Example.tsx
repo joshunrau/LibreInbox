@@ -58,11 +58,12 @@ const profile = {
     Sits: 'Oasis, 4th floor',
     Team: 'Product Development',
     Title: 'Senior Front-End Developer'
-  },
+  } as Record<string, string>,
   imageUrl:
     'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
   name: 'Ricardo Cooper'
 };
+
 const directory = {
   A: [
     {
@@ -407,7 +408,7 @@ export const Example = () => {
                   </nav>
                 </div>
                 <div className="flex flex-shrink-0 border-t border-gray-200 p-4">
-                  <a className="group block flex-shrink-0" href="#">
+                  <a className="group block flex-shrink-0" href="#foo">
                     <div className="flex items-center">
                       <div>
                         <img alt="" className="inline-block h-10 w-10 rounded-full" src={user.imageUrl} />
@@ -484,7 +485,7 @@ export const Example = () => {
                 </nav>
               </div>
               <div className="flex flex-shrink-0 border-t border-gray-200 p-4">
-                <a className="group block w-full flex-shrink-0" href="#">
+                <a className="group block w-full flex-shrink-0" href="#foo">
                   <div className="flex items-center">
                     <div>
                       <img alt="" className="inline-block h-9 w-9 rounded-full" src={user.imageUrl} />
@@ -525,7 +526,7 @@ export const Example = () => {
             <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
               {/* Breadcrumb */}
               <nav aria-label="Breadcrumb" className="flex items-start px-4 py-3 sm:px-6 lg:px-8 xl:hidden">
-                <a className="inline-flex items-center space-x-3 text-sm font-medium text-gray-900" href="#">
+                <a className="inline-flex items-center space-x-3 text-sm font-medium text-gray-900" href="#foo">
                   <ChevronLeftIcon aria-hidden="true" className="-ml-2 h-5 w-5 text-gray-400" />
                   <span>Directory</span>
                 </a>
@@ -631,7 +632,7 @@ export const Example = () => {
                           <img alt="" className="h-10 w-10 rounded-full" src={person.imageUrl} />
                         </div>
                         <div className="min-w-0 flex-1">
-                          <a className="focus:outline-none" href="#">
+                          <a className="focus:outline-none" href="#foo">
                             <span aria-hidden="true" className="absolute inset-0" />
                             <p className="text-sm font-medium text-gray-900">{person.name}</p>
                             <p className="truncate text-sm text-gray-500">{person.role}</p>
@@ -681,15 +682,15 @@ export const Example = () => {
                     <div className="sticky top-0 z-10 border-b border-t border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
                       <h3>{letter}</h3>
                     </div>
-                    <ul className="relative z-0 divide-y divide-gray-200" role="list">
-                      {directory[letter].map((person) => (
+                    <ul className="relative z-0 divide-y divide-gray-200">
+                      {directory[letter as keyof typeof directory].map((person) => (
                         <li key={person.id}>
                           <div className="relative flex items-center space-x-3 px-6 py-5 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500 hover:bg-gray-50">
                             <div className="flex-shrink-0">
                               <img alt="" className="h-10 w-10 rounded-full" src={person.imageUrl} />
                             </div>
                             <div className="min-w-0 flex-1">
-                              <a className="focus:outline-none" href="#">
+                              <a className="focus:outline-none" href="#foo">
                                 {/* Extend touch target to entire panel */}
                                 <span aria-hidden="true" className="absolute inset-0" />
                                 <p className="text-sm font-medium text-gray-900">{person.name}</p>

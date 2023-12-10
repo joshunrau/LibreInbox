@@ -6,8 +6,8 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "email-client",
-    "version": "0.0.0"
+    "productName": "LibreInbox",
+    "version": "../package.json"
   },
   "tauri": {
     "allowlist": {
@@ -19,11 +19,16 @@
     },
     "bundle": {
       "active": true,
+      "category": "Business",
+      "copyright": "© 2023 Joshua Unrau",
       "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.joshuaunrau.libre-inbox",
+      "macOS": {
+        "license": "../LICENSE",
+        "minimumSystemVersion": "10.13"
+      },
       "targets": "all"
     },
-    "macOSPrivateApi": true,
     "security": {
       "csp": null
     },
@@ -31,11 +36,10 @@
       {
         "fullscreen": false,
         "height": 650,
-        "minWidth": 1000,
         "minHeight": 650,
+        "minWidth": 1000,
         "resizable": true,
         "title": "email-client",
-        "transparent": true,
         "width": 1000
       }
     ]

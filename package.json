@@ -7,9 +7,11 @@
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite",
+    "lint": "tsc && eslint --fix src",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "tauri": "tauri",
+    "tauri:build": "tauri build",
     "tauri:dev": "tauri dev"
   },
   "dependencies": {
