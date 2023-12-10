@@ -30,11 +30,13 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 650,
+        "minWidth": 1000,
+        "minHeight": 650,
         "resizable": true,
         "title": "email-client",
         "transparent": true,
-        "width": 800
+        "width": 1000
       }
     ]
   }
