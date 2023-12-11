@@ -19,7 +19,7 @@ pub struct AppState(pub Mutex<InnerAppState>);
 
 #[derive(serde::Serialize)]
 struct CustomResponse {
-    message: String,
+    items: Vec<String>,
 }
 
 #[tauri::command]
@@ -31,7 +31,7 @@ fn append_item(
     println!("Called from {}", window.label());
 
     if item.len() == 0 {
-        return Err(String::from("Error: Empty Item"));
+        return Err(String::from("Empty Item"));
     }
 
     let mut state_guard = state.0.lock().unwrap();
@@ -47,7 +47,7 @@ fn append_item(
     println!("New items {:?}", state_guard.items);
 
     Ok(CustomResponse {
-        message: String::from("Success"),
+        items: state_guard.items.clone(),
     })
 }
 

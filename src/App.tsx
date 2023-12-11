@@ -1,20 +1,45 @@
+import { useState } from 'react';
+
 import { invoke } from '@tauri-apps/api/tauri';
 
 export const App = () => {
+  const [item, setItem] = useState('');
+  const [items, setItems] = useState<string[]>([]);
+  const [error, setError] = useState('');
+
   const appendItem = async () => {
-    const result = await invoke('append_item', {
-      item: 'foo'
-    });
-    // eslint-disable-next-line no-console
-    console.log(result);
+    try {
+      const result: { items: string[] } = await invoke('append_item', {
+        item
+      });
+      setItems(result.items);
+      setItem('');
+      setError('');
+    } catch (err) {
+      setError(JSON.stringify(err));
+    }
   };
 
   return (
     <div>
-      <input />
+      <h1 className="my-5 text-center text-lg font-semibold">To-Do List</h1>
+      <ul>
+        {items.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+      <div>
+        <input value={item} onChange={(e) => setItem(e.target.value)} />
+      </div>
       <button type="button" onClick={() => void appendItem()}>
         Add Item
       </button>
+      {error && (
+        <p className="text-red-600">
+          <span className="font-medium">Error: </span>
+          {error}
+        </p>
+      )}
     </div>
   );
 };
