@@ -1,7 +1,22 @@
-import { Layout } from './components/Layout';
+import { invoke } from '@tauri-apps/api/tauri';
 
 export const App = () => {
-  return <Layout />;
+  const appendItem = async () => {
+    const result = await invoke('append_item', {
+      item: 'foo'
+    });
+    // eslint-disable-next-line no-console
+    console.log(result);
+  };
+
+  return (
+    <div>
+      <input />
+      <button type="button" onClick={() => void appendItem()}>
+        Add Item
+      </button>
+    </div>
+  );
 };
 
 // import { useState } from 'react';
