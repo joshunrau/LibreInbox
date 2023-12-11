@@ -68,7 +68,7 @@ jobs:
         run: sudo apt-get install gcc-aarch64-linux-gnu && sudo dpkg --add-architecture arm64
       - name: Install ARM64 System Dependencies (Ubuntu Only)
         if: ${{ matrix.target.platform == 'ubuntu-20.04' && matrix.target.arch == 'aarch64'  }}
-        run: udo apt-get update && sudo apt-get upgrade -y && sudo apt-get install libwebkit2gtk-4.0-dev:arm64
+        run: sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install libwebkit2gtk-4.0-dev:arm64
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
