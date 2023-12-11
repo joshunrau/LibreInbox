@@ -27,7 +27,7 @@
         "license": "../LICENSE",
         "minimumSystemVersion": "10.13"
       },
-      "targets": "all"
+      "targets": ["deb", "dmg", "msi"]
     },
     "security": {
       "csp": null
