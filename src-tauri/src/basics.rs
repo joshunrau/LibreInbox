@@ -34,19 +34,6 @@ fn guessing_game() {
 }
 
 fn variables() {
-    // Variables are immutable unless otherwise declared
-    let mut x = 5;
-    println!("The value of x is: {x}");
-    x = 6;
-    println!("The value of x is: {x}");
-
-    // Constants
-    // Constants are always immutable and must have an explicit type annotation
-    // constants may be set only to a constant expression, not the result of a value that could only be computed at runtime
-    const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
-
-    println!("Three hours in seconds: {THREE_HOURS_IN_SECONDS}");
-
     // Shadowing
     let x = 5;
 
