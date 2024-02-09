@@ -8,28 +8,28 @@ const exampleText = 'Whereas disregard and contempt for human rights have result
 
 export default { component: Heading } as Meta<typeof Heading>;
 
-export const H1: Story = {
+export const Heading1: Story = {
   args: {
     children: exampleText,
     variant: 'h1'
   }
 };
 
-export const H2: Story = {
+export const Heading2: Story = {
   args: {
     children: exampleText,
     variant: 'h2'
   }
 };
 
-export const H3: Story = {
+export const Heading3: Story = {
   args: {
     children: exampleText,
     variant: 'h3'
   }
 };
 
-export const H4: Story = {
+export const Heading4: Story = {
   args: {
     children: exampleText,
     variant: 'h4'
