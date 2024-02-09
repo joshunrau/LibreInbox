@@ -6,11 +6,11 @@ import type Zod from 'zod';
 import { FormContext } from '@/context/FormContext';
 import { cn } from '@/lib/utils';
 
-import { FormErrorMessage } from './FormErrorMessage';
+import { ErrorMessage } from './ErrorMessage';
 
 import type { FormState, FormTextChangeHandler, ValidateFunction } from './types';
 
-type FormProps<TState extends FormState = FormState> = {
+export type FormProps<TState extends FormState = FormState> = {
   children: React.ReactNode;
   className?: string;
   onError?: () => Promisable<void>;
@@ -91,7 +91,7 @@ export const Form = React.forwardRef<HTMLFormElement, FormProps>(function Form(
       >
         {title && <h5 className="text-base font-semibold text-slate-900">{title}</h5>}
         {children}
-        {rootErrors.length > 0 && rootErrors.map((error, i) => <FormErrorMessage error={error} key={i} />)}
+        {rootErrors.length > 0 && rootErrors.map((error, i) => <ErrorMessage error={error} key={i} />)}
       </form>
     </FormContext.Provider>
   );

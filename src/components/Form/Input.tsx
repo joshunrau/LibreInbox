@@ -2,7 +2,9 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  type: Extract<React.HTMLInputTypeAttribute, 'password' | 'text'>;
+};
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input({ className, type, ...props }, ref) {
   return (
