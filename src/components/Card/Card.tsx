@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils';
 
 export const Card = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(function Card(
   { children, className, ...props },

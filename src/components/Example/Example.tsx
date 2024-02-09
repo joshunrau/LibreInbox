@@ -17,7 +17,7 @@ import Squares2X2Icon from '@heroicons/react/24/outline/Squares2X2Icon';
 import UserGroupIcon from '@heroicons/react/24/outline/UserGroupIcon';
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils';
 
 const user = {
   imageUrl:
