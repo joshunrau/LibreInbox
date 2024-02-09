@@ -21,7 +21,6 @@ export default {
         color: /(background|color)$/i,
         date: /Date$/
       }
-    },
-    layout: 'fullscreen'
+    }
   }
 };
