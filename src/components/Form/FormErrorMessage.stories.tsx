@@ -8,6 +8,6 @@ export default { component: FormErrorMessage } as Meta<typeof FormErrorMessage>;
 
 export const Default: Story = {
   args: {
-    message: 'Invalid Input'
+    error: 'Invalid Input'
   }
 };
