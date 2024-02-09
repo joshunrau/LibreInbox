@@ -4,6 +4,7 @@ import type { FormState, FormTextChangeHandler, ValidateFunction } from '@/compo
 
 type FormContextType = {
   errors: Zod.ZodFormattedError<FormState> | null;
+  formId: string;
   isSubmitted: boolean;
   onInputChange: FormTextChangeHandler;
   readonly?: boolean;

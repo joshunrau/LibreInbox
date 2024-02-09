@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 
 import type { Promisable } from 'type-fest';
 import type Zod from 'zod';
@@ -43,6 +43,7 @@ export const Form = React.forwardRef<HTMLFormElement, FormProps>(function Form(
   const [errors, setErrors] = useState<Zod.ZodFormattedError<FormState> | null>(null);
   const [rootErrors, setRootErrors] = useState<string[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const formId = useId();
 
   const validate: ValidateFunction<FormState> = async ({ onFailure, onSuccess } = {}) => {
     const result = await validationSchema.safeParseAsync(state);
@@ -72,6 +73,7 @@ export const Form = React.forwardRef<HTMLFormElement, FormProps>(function Form(
     <FormContext.Provider
       value={{
         errors,
+        formId,
         isSubmitted,
         onInputChange: onInputChange as FormTextChangeHandler,
         readonly,
@@ -82,6 +84,7 @@ export const Form = React.forwardRef<HTMLFormElement, FormProps>(function Form(
     >
       <form
         className={cn('my-6 space-y-6', tight && 'space-y-4', className)}
+        id={formId}
         ref={ref}
         onReset={handleReset}
         onSubmit={handleSubmit}
