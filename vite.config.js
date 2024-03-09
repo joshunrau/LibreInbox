@@ -33,7 +33,7 @@ export default defineConfig(async () => ({
   },
   test: {
     environment: 'happy-dom',
-    setupFiles: [path.resolve(__dirname, './src/setup-tests.ts')],
+    setupFiles: [path.resolve(__dirname, './src/testing/setup-tests.ts')],
     watch: false
   }
 }));
