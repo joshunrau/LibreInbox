@@ -4,7 +4,7 @@ export const $Email = z.object({
   date: z.date(),
   email: z.string(),
   id: z.string(),
-  labels: z.string(),
+  labels: z.array(z.string()),
   name: z.string(),
   read: z.boolean(),
   subject: z.string(),
