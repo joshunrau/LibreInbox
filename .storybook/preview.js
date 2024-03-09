@@ -1,3 +1,5 @@
+import '../src/styles.css';
+
 /** @type {import('@storybook/react').Preview} */
 export default {
   parameters: {
