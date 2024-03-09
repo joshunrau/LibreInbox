@@ -28,5 +28,55 @@
       "en": "Sunday",
       "fr": "Dimanche"
     }
+  },
+  "months": {
+    "january": {
+      "en": "January",
+      "fr": "Janvier"
+    },
+    "february": {
+      "en": "February",
+      "fr": "Février"
+    },
+    "march": {
+      "en": "March",
+      "fr": "Mars"
+    },
+    "april": {
+      "en": "April",
+      "fr": "Avril"
+    },
+    "may": {
+      "en": "May",
+      "fr": "Mai"
+    },
+    "june": {
+      "en": "June",
+      "fr": "Juin"
+    },
+    "july": {
+      "en": "July",
+      "fr": "Juillet"
+    },
+    "august": {
+      "en": "August",
+      "fr": "Août"
+    },
+    "september": {
+      "en": "September",
+      "fr": "Septembre"
+    },
+    "october": {
+      "en": "October",
+      "fr": "Octobre"
+    },
+    "november": {
+      "en": "November",
+      "fr": "Novembre"
+    },
+    "december": {
+      "en": "December",
+      "fr": "Décembre"
+    }
   }
 }
