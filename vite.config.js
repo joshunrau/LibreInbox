@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import path from 'path';
 import url from 'url';
 
@@ -28,5 +30,10 @@ export default defineConfig(async () => ({
     watch: {
       ignored: ['**/src-tauri/**']
     }
+  },
+  test: {
+    environment: 'happy-dom',
+    setupFiles: [path.resolve(__dirname, './src/setup-tests.ts')],
+    watch: false
   }
 }));

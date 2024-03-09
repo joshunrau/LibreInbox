@@ -43,6 +43,7 @@ export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>
     <Button className={className} ref={ref} size="icon" type="button" variant={variant} {...props}>
       <ChevronUpIcon
         className="transform-gpu transition-transform"
+        data-testid="arrow-up-icon"
         style={{ transform: `rotate(${computedRotation}deg)` }}
       />
     </Button>
