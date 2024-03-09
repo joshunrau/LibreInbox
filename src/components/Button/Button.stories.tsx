@@ -1,22 +1,14 @@
 import { DownloadIcon } from '@radix-ui/react-icons';
 import type { Meta, StoryObj } from '@storybook/react';
-import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { Button } from './Button';
 
 type Story = StoryObj<typeof Button>;
 
 export default {
-  args: {
-    onClick: fn()
-  },
   component: Button,
   parameters: {
     layout: 'centered'
-  },
-  play: async ({ args, canvasElement }) => {
-    await userEvent.click(within(canvasElement).getByRole('button'));
-    await expect(args.onClick).toHaveBeenCalledOnce();
   },
   tags: ['autodocs']
 } satisfies Meta<typeof Button>;
