@@ -1,8 +1,21 @@
 import { faker } from '@faker-js/faker';
+import { range } from 'lodash-es';
 
 import type { Email } from '@/models/email';
 
-export const emailGenerator = (overrides?: Partial<Email>): Email => ({
+class DataGenerator<T extends object> {
+  constructor(private factory: (overrides?: Partial<T>) => T) {}
+
+  generateMany(count: number, overrides?: Partial<T>): T[] {
+    return range(count).map(() => this.factory(overrides));
+  }
+
+  generateOne(overrides?: Partial<T>): T {
+    return this.factory(overrides);
+  }
+}
+
+export const emailGenerator = new DataGenerator<Email>((overrides) => ({
   date: faker.date.past({ years: 1 }),
   email: faker.internet.email(),
   id: faker.string.uuid(),
@@ -12,4 +25,4 @@ export const emailGenerator = (overrides?: Partial<Email>): Email => ({
   subject: faker.lorem.sentence(),
   text: faker.lorem.paragraphs({ max: 3, min: 1 }),
   ...overrides
-});
+}));
