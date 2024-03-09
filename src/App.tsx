@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { invoke } from '@tauri-apps/api/tauri';
 
+import './services/i18next';
+
 export const App = () => {
   const [greetMsg, setGreetMsg] = useState('');
   const [name, setName] = useState('');

@@ -112,6 +112,9 @@ devDependencies:
   storybook:
     specifier: 8.0.0-rc.3
     version: 8.0.0-rc.3(react-dom@18.2.0)(react@18.2.0)
+  storybook-react-i18next:
+    specifier: ^2.1.1
+    version: 2.1.1(i18next-browser-languagedetector@7.2.0)(i18next-http-backend@2.5.0)(i18next@23.10.1)(react-i18next@14.1.0)
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -5289,6 +5292,15 @@ packages:
       { integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ== }
     dev: true
 
+  /cross-fetch@4.0.0:
+    resolution:
+      { integrity: sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g== }
+    dependencies:
+      node-fetch: 2.7.0
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /cross-spawn@7.0.3:
     resolution:
       { integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w== }
@@ -6703,7 +6715,6 @@ packages:
       { integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg== }
     dependencies:
       void-elements: 3.1.0
-    dev: false
 
   /html-tags@3.3.1:
     resolution:
@@ -6742,12 +6753,27 @@ packages:
     hasBin: true
     dev: true
 
+  /i18next-browser-languagedetector@7.2.0:
+    resolution:
+      { integrity: sha512-U00DbDtFIYD3wkWsr2aVGfXGAj2TgnELzOX9qv8bT0aJtvPV9CRO77h+vgmHFBMe7LAxdwvT/7VkCWGya6L3tA== }
+    dependencies:
+      '@babel/runtime': 7.24.0
+    dev: true
+
+  /i18next-http-backend@2.5.0:
+    resolution:
+      { integrity: sha512-Z/aQsGZk1gSxt2/DztXk92DuDD20J+rNudT7ZCdTrNOiK8uQppfvdjq9+DFQfpAnFPn3VZS+KQIr1S/W1KxhpQ== }
+    dependencies:
+      cross-fetch: 4.0.0
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /i18next@23.10.1:
     resolution:
       { integrity: sha512-NDiIzFbcs3O9PXpfhkjyf7WdqFn5Vq6mhzhtkXzj51aOcNuPNcTwuYNuXCpHsanZGHlHKL35G7huoFeVic1hng== }
     dependencies:
       '@babel/runtime': 7.24.0
-    dev: false
 
   /iconv-lite@0.4.24:
     resolution:
@@ -8546,7 +8572,6 @@ packages:
       i18next: 23.10.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: false
 
   /react-is@16.13.1:
     resolution:
@@ -9128,6 +9153,27 @@ packages:
   /store2@2.14.3:
     resolution:
       { integrity: sha512-4QcZ+yx7nzEFiV4BMLnr/pRa5HYzNITX2ri0Zh6sT9EyQHbBHacC6YigllUPU9X3D0f/22QCgfokpKs52YRrUg== }
+    dev: true
+
+  /storybook-i18n@2.1.1:
+    resolution:
+      { integrity: sha512-SK8WZBE5aDAGTHL0zELlvot3BT4AcPSMkwbXPaGJ0666nwawN/vpfmGdje9ZoQylEzPQRGH6Ihqx7UXVFIT9hA== }
+    dev: true
+
+  /storybook-react-i18next@2.1.1(i18next-browser-languagedetector@7.2.0)(i18next-http-backend@2.5.0)(i18next@23.10.1)(react-i18next@14.1.0):
+    resolution:
+      { integrity: sha512-Sf8T2SCHOMLtWg3cA41ocKMYLIay5bD6gNyleIbYv8vVbvDXBejFB2VFEaJcq72Q1xnYwehh4293nzSwADh2oQ== }
+    peerDependencies:
+      i18next: ^22.0.0 || ^23.0.0 || ^24.0.0
+      i18next-browser-languagedetector: ^7.0.0
+      i18next-http-backend: ^2.0.0
+      react-i18next: ^12.0.0 || ^13.0.0 || ^14.0.0
+    dependencies:
+      i18next: 23.10.1
+      i18next-browser-languagedetector: 7.2.0
+      i18next-http-backend: 2.5.0
+      react-i18next: 14.1.0(i18next@23.10.1)(react-dom@18.2.0)(react@18.2.0)
+      storybook-i18n: 2.1.1
     dev: true
 
   /storybook@8.0.0-rc.3(react-dom@18.2.0)(react@18.2.0):
@@ -9919,7 +9965,6 @@ packages:
     resolution:
       { integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w== }
     engines: { node: '>=0.10.0' }
-    dev: false
 
   /watchpack@2.4.0:
     resolution:

@@ -8,7 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "maxNodeModuleJsDepth": 0,
     "module": "ESNext",
     "moduleDetection": "force",
@@ -23,9 +23,16 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2021",
+    "target": "ESNext",
     "useDefineForClassFields": true,
     "verbatimModuleSyntax": true
   },
-  "include": ["eslint.config.js", "prettier.config.js", "tailwind.config.js", "vite.config.js", "src/**/*"]
+  "include": [
+    ".storybook/*.js",
+    "eslint.config.js",
+    "prettier.config.js",
+    "tailwind.config.js",
+    "vite.config.js",
+    "src/**/*"
+  ]
 }

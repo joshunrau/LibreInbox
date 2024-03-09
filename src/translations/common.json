@@ -1,0 +1,32 @@
+{
+  "days": {
+    "monday": {
+      "en": "Monday",
+      "fr": "Lundi"
+    },
+    "tuesday": {
+      "en": "Tuesday",
+      "fr": "Mardi"
+    },
+    "wednesday": {
+      "en": "Wednesday",
+      "fr": "Mercredi"
+    },
+    "thursday": {
+      "en": "Thursday",
+      "fr": "Jeudi"
+    },
+    "friday": {
+      "en": "Friday",
+      "fr": "Vendredi"
+    },
+    "saturday": {
+      "en": "Saturday",
+      "fr": "Samedi"
+    },
+    "sunday": {
+      "en": "Sunday",
+      "fr": "Dimanche"
+    }
+  }
+}
