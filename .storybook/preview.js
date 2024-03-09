@@ -1,4 +1,4 @@
-import { withThemeByClassName } from '@storybook/addon-themes';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 import i18n from '../src/services/i18next';
 
@@ -7,7 +7,8 @@ import '../src/styles.css';
 /** @type {import('@storybook/react').Preview} */
 export default {
   decorators: [
-    withThemeByClassName({
+    withThemeByDataAttribute({
+      attributeName: 'data-mode',
       defaultTheme: 'light',
       themes: {
         dark: 'dark',
