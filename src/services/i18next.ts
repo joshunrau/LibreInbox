@@ -8,6 +8,7 @@ import common from '../translations/common.json';
 const defaultNS = 'common' as const;
 const supportedLngs = ['en', 'fr'] as const;
 
+type DefaultNS = typeof defaultNS;
 type Language = (typeof supportedLngs)[number];
 
 type TranslationsDef = Record<string, Record<string, unknown>>;
@@ -63,3 +64,5 @@ await i18next.use(initReactI18next).init({
 });
 
 export default i18next;
+
+export type { DefaultNS, Language, TranslatedResource };
