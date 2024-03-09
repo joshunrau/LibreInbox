@@ -9,7 +9,7 @@ import { defineConfig } from 'vite';
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export default defineConfig({
+export default defineConfig(async () => ({
   clearScreen: false,
   css: {
     postcss: {
@@ -24,6 +24,9 @@ export default defineConfig({
   },
   server: {
     port: 1420,
-    strictPort: true
+    strictPort: true,
+    watch: {
+      ignored: ['**/src-tauri/**']
+    }
   }
-});
+}));

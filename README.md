@@ -22,7 +22,6 @@
 ![license](https://img.shields.io/github/license/joshunrau/LibreInbox)
 ![version](https://img.shields.io/github/package-json/v/joshunrau/LibreInbox)
 
-
 </div>
 <hr />
 
@@ -45,8 +44,8 @@ LibreInbox is an open-source desktop email client, designed as a modern alternat
 
 ## Contributing
 
-Contributions to LibreInbox are welcomed! Please read our `CONTRIBUTING.md` file for guidelines on how to submit issues, feature requests, and code.
+We welcome contributions! See the `CONTRIBUTING.md` file for more details.
 
 ## License
 
-LibreInbox is released under the GNU General Public License v3.0 or later. See the `LICENSE` file for more details.
+LibreInbox is released under the GNU General Public License v3.0. See the `LICENSE` file for more details.

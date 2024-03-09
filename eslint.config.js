@@ -1,17 +1,15 @@
-import path from 'path';
-import url from 'url';
+import { config } from '@joshunrau/eslint-config';
 
-import { createConfig } from '@joshunrau/eslint-config';
-
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export default createConfig({
-  base: {
-    env: 'browser'
+// These are the defaults, override as needed depending on project
+export default config({
+  env: {
+    browser: true,
+    es2021: true
   },
-  jsx: true,
-  ts: {
-    project: path.resolve(__dirname, 'tsconfig.json')
+  jsdoc: {
+    enabled: false
+  },
+  react: {
+    enabled: true
   }
 });
