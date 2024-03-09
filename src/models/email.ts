@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const $Mail = z.object({
+export const $Email = z.object({
   date: z.date(),
   email: z.string(),
   id: z.string(),
@@ -11,4 +11,4 @@ export const $Mail = z.object({
   text: z.string()
 });
 
-export type Mail = z.infer<typeof $Mail>;
+export type Email = z.infer<typeof $Email>;
