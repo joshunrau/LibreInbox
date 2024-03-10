@@ -14,10 +14,10 @@ import { Separator } from '@/components/base/Separator';
 import { Switch } from '@/components/base/Switch';
 import { TextArea } from '@/components/base/TextArea';
 import { Tooltip } from '@/components/base/Tooltip';
-import type { Mail } from '@/data';
+import type { Email } from '@/models/email';
 
 interface MailDisplayProps {
-  mail: Mail | null;
+  mail: Email | null;
 }
 
 export const MailDisplay = ({ mail }: MailDisplayProps) => {
