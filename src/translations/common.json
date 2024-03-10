@@ -78,5 +78,19 @@
       "en": "December",
       "fr": "Décembre"
     }
+  },
+  "theme": {
+    "light": {
+      "en": "Light",
+      "fr": "Clair"
+    },
+    "dark": {
+      "en": "Dark",
+      "fr": "Sombre"
+    },
+    "system": {
+      "en": "System",
+      "fr": "Système"
+    }
   }
 }
