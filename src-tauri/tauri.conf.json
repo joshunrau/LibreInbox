@@ -35,12 +35,12 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 650,
-        "minHeight": 650,
-        "minWidth": 1000,
+        "height": 800,
+        "minHeight": 600,
+        "minWidth": 960,
         "resizable": true,
         "title": "LibreInbox",
-        "width": 1000
+        "width": 1280
       }
     ]
   }
