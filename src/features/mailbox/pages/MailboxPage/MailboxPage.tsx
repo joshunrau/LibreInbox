@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 
 import {
   AlertCircle,
@@ -47,7 +47,7 @@ export const MailboxPage = ({
   mails,
   navCollapsedSize
 }: MailboxPageProps) => {
-  const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
+  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
   const { selectedEmail } = useEmailStore();
 
   return (
