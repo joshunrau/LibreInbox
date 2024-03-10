@@ -92,5 +92,13 @@
       "en": "System",
       "fr": "Système"
     }
+  },
+  "addAccount": {
+    "en": "Add Account",
+    "fr": "Ajouter un compte"
+  },
+  "greeting": {
+    "en": "Welcome to LibreInbox",
+    "fr": "Bienvenue à LibreInbox"
   }
 }
