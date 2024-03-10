@@ -104,8 +104,8 @@ devDependencies:
     specifier: ^8.4.1
     version: 8.4.1
   '@joshunrau/eslint-config':
-    specifier: ^4.0.1
-    version: 4.0.1(eslint@8.57.0)(typescript@5.3.3)
+    specifier: ^4.0.2
+    version: 4.0.2(eslint@8.57.0)(typescript@5.3.3)
   '@storybook/addon-essentials':
     specifier: 8.0.0-rc.3
     version: 8.0.0-rc.3(@types/react@18.2.64)(react-dom@18.2.0)(react@18.2.0)
@@ -2275,9 +2275,9 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@joshunrau/eslint-config@4.0.1(eslint@8.57.0)(typescript@5.3.3):
+  /@joshunrau/eslint-config@4.0.2(eslint@8.57.0)(typescript@5.3.3):
     resolution:
-      { integrity: sha512-UEdbyLQNiTr8CCWsR9qvif20jW+r2pjgQgA0kAQVg5eaqjhRCyUu6I+a7hWC3DPe6KGNL6olr1Pwjp5VRL6qXA== }
+      { integrity: sha512-RhmsVntedKjQl5KisOTvsPeVSDYzjBnhQdAaYG8iZIeVLlcE5y7mu2K0GtL/D1552VgruXqbhzBqYC/+d9oWbQ== }
     peerDependencies:
       eslint: 8.x
       typescript: 5.x

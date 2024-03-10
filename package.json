@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "@joshunrau/eslint-config": "^4.0.1",
+    "@joshunrau/eslint-config": "^4.0.2",
     "@storybook/addon-essentials": "8.0.0-rc.3",
     "@storybook/addon-interactions": "8.0.0-rc.3",
     "@storybook/addon-links": "8.0.0-rc.3",
