@@ -14,11 +14,11 @@ import {
   Users2
 } from 'lucide-react';
 
-import { Input } from '@/components/base/Input';
-import { Resizable } from '@/components/base/Resizable';
-import { Separator } from '@/components/base/Separator';
-import { Tabs } from '@/components/base/Tabs';
-import { Tooltip } from '@/components/base/Tooltip';
+import { Input } from '@/components/Input';
+import { Resizable } from '@/components/Resizable';
+import { Separator } from '@/components/Separator';
+import { Tabs } from '@/components/Tabs';
+import { Tooltip } from '@/components/Tooltip';
 import type { Email } from '@/models/email';
 import { useEmailStore } from '@/stores/email-store';
 import { cn } from '@/utils/cn';

@@ -2,8 +2,8 @@
 
 import type { LucideIcon } from 'lucide-react';
 
-import { buttonVariants } from '@/components/base/Button';
-import { Tooltip } from '@/components/base/Tooltip';
+import { buttonVariants } from '@/components/Button';
+import { Tooltip } from '@/components/Tooltip';
 import { cn } from '@/utils/cn';
 
 interface NavProps {

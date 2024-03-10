@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Select } from '@/components/base/Select';
+import { Select } from '@/components/Select';
 import { cn } from '@/utils/cn';
 
 interface AccountSwitcherProps {

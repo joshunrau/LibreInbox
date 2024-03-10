@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Tooltip } from '@/components/base/Tooltip';
+import { Tooltip } from '@/components/Tooltip';
 
 import { MailDisplay } from './MailDisplay';
 

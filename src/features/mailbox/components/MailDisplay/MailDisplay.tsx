@@ -4,16 +4,16 @@ import { format } from 'date-fns/format';
 import { nextSaturday } from 'date-fns/nextSaturday';
 import { Archive, ArchiveX, Clock, Forward, MoreVertical, Reply, ReplyAll, Trash2 } from 'lucide-react';
 
-import { Avatar } from '@/components/base/Avatar';
-import { Button } from '@/components/base/Button';
-import { DatePicker } from '@/components/base/DatePicker';
-import { DropdownMenu } from '@/components/base/DropdownMenu';
-import { Label } from '@/components/base/Label';
-import { Popover } from '@/components/base/Popover';
-import { Separator } from '@/components/base/Separator';
-import { Switch } from '@/components/base/Switch';
-import { TextArea } from '@/components/base/TextArea';
-import { Tooltip } from '@/components/base/Tooltip';
+import { Avatar } from '@/components/Avatar';
+import { Button } from '@/components/Button';
+import { DatePicker } from '@/components/DatePicker';
+import { DropdownMenu } from '@/components/DropdownMenu';
+import { Label } from '@/components/Label';
+import { Popover } from '@/components/Popover';
+import { Separator } from '@/components/Separator';
+import { Switch } from '@/components/Switch';
+import { TextArea } from '@/components/TextArea';
+import { Tooltip } from '@/components/Tooltip';
 import type { Email } from '@/models/email';
 
 interface MailDisplayProps {

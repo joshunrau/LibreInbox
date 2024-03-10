@@ -2,8 +2,8 @@ import React from 'react';
 
 import { formatDistanceToNow } from 'date-fns/formatDistanceToNow';
 
-import { Badge } from '@/components/base/Badge';
-import { ScrollArea } from '@/components/base/ScrollArea';
+import { Badge } from '@/components/Badge';
+import { ScrollArea } from '@/components/ScrollArea';
 import type { Email } from '@/models/email';
 import { useEmailStore } from '@/stores/email-store';
 import { cn } from '@/utils/cn';

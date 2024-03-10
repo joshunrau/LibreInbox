@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { invoke } from '@tauri-apps/api/tauri';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { ErrorFallback } from './components/core/ErrorFallback';
+import { ErrorFallback } from './components/ErrorFallback';
 
 export const App = () => {
   const [greetMsg, setGreetMsg] = useState('');
@@ -35,7 +35,7 @@ export const App = () => {
   );
 };
 
-// import { Mail } from './components/core/Mail/Mail';
+// import { Mail } from './components/Mail/Mail';
 // import { accounts, mails } from './data';
 // import './services/i18next';
 

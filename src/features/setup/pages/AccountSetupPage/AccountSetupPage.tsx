@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { buttonVariants } from '@/components/base/Button';
+import { buttonVariants } from '@/components/Button';
 import { cn } from '@/utils/cn';
 
 import { AccountSetupForm } from '../../components/AccountSetupForm';

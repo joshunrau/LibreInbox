@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { Button } from '@/components/base/Button';
-import { Input } from '@/components/base/Input';
-import { Label } from '@/components/base/Label';
-import { SpinnerIcon } from '@/components/base/SpinnerIcon';
+import { Button } from '@/components/Button';
+import { Input } from '@/components/Input';
+import { Label } from '@/components/Label';
+import { SpinnerIcon } from '@/components/SpinnerIcon';
 import { cn } from '@/utils/cn';
 
 interface AccountSetupFormProps extends React.HTMLAttributes<HTMLDivElement> {}
