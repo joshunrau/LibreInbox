@@ -2,6 +2,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import { Router } from './Router';
 import { ErrorFallback } from './components/ErrorFallback';
+import './services/i18next';
 
 export const App = () => {
   return (
