@@ -23,12 +23,12 @@ import type { Email } from '@/models/email';
 import { useEmailStore } from '@/stores/email-store';
 import { cn } from '@/utils/cn';
 
-import { AccountSwitcher } from '../AccountSwitcher';
-import { MailDisplay } from '../MailDisplay';
-import { MailList } from '../MailList';
-import { Nav } from '../Nav';
+import { AccountSwitcher } from '../../components/AccountSwitcher';
+import { MailDisplay } from '../../components/MailDisplay';
+import { MailList } from '../../components/MailList';
+import { Nav } from '../../components/Nav';
 
-interface MailProps {
+interface MailboxPageProps {
   accounts: {
     email: string;
     icon: React.ReactNode;
@@ -40,13 +40,13 @@ interface MailProps {
   navCollapsedSize: number;
 }
 
-export const Mail = ({
+export const MailboxPage = ({
   accounts,
   defaultCollapsed = false,
   defaultLayout = [265, 440, 655],
   mails,
   navCollapsedSize
-}: MailProps) => {
+}: MailboxPageProps) => {
   const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
   const { selectedEmail } = useEmailStore();
 
