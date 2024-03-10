@@ -1,31 +1,32 @@
 import { MoonIcon, SunIcon } from 'lucide-react';
-import { twMerge } from 'tailwind-merge';
+import { useTranslation } from 'react-i18next';
 
 import { useTheme } from '@/hooks/useTheme';
 
+import { Button } from '../Button';
+import { DropdownMenu } from '../DropdownMenu';
+
 export type ThemeToggleProps = {
-  className?: string;
-  size?: number;
+  align?: 'center' | 'end' | 'start';
 };
 
-export const ThemeToggle = ({ className, size = 24 }: ThemeToggleProps) => {
-  const [theme, setTheme] = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+export const ThemeToggle = ({ align = 'start' }: ThemeToggleProps) => {
+  const [_, setTheme] = useTheme();
+  const { t } = useTranslation();
 
   return (
-    <button
-      className={twMerge(
-        'rounded-md p-2 transition-transform hover:backdrop-brightness-95 dark:hover:backdrop-brightness-150',
-        className
-      )}
-      type="button"
-      onClick={toggleTheme}
-    >
-      <SunIcon className="hidden dark:block" height={size} width={size} />
-      <MoonIcon className="dark:hidden" height={size} width={size} />
-    </button>
+    <DropdownMenu>
+      <DropdownMenu.Trigger asChild>
+        <Button className="flex items-center justify-center" size="icon" variant="outline">
+          <SunIcon className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <MoonIcon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        </Button>
+      </DropdownMenu.Trigger>
+      <DropdownMenu.Content align={align}>
+        <DropdownMenu.Item onClick={() => setTheme('light')}>{t('theme.light')}</DropdownMenu.Item>
+        <DropdownMenu.Item onClick={() => setTheme('dark')}>{t('theme.dark')}</DropdownMenu.Item>
+        <DropdownMenu.Item disabled>{t('theme.system')}</DropdownMenu.Item>
+      </DropdownMenu.Content>
+    </DropdownMenu>
   );
 };
